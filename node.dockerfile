@@ -5,9 +5,10 @@ ENV NODE_ENV=production
 
 WORKDIR /var/www
 COPY package*.json ./
-RUN npm install
+RUN npm install && npm install -g nodemon
 
 COPY . ./
-EXPOSE $PORT
+EXPOSE 3000
 
-ENTRYPOINT [ "npm", "start" ]
+ENTRYPOINT [ "npm", "run" ]
+CMD [ "prod" ]
