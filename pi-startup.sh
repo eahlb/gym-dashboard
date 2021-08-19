@@ -5,4 +5,4 @@ wget https://raw.githubusercontent.com/eahlb/gym-dashboard/master/docker-compose
 docker-compose down
 docker-compose up -d
 chromium-browser --start-fullscreen http://localhost:8080 &
-docker-compose logs -f
+exit 0
