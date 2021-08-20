@@ -7,7 +7,8 @@
 
 body {
   height: 95vh;
-  margin: 1vh;
+  width: 95vw;
+  margin: 2vh 0 0 2vw;
 }
 
 .base {
@@ -25,9 +26,9 @@ div {
 
 button {
   border-color: chartreuse;
-  border-width: 1vmin;
+  border-width: 1vmax;
   border-radius: 10%;
-  margin: 1vmin;
+  margin: 1vmax;
   flex-grow: 1;
 }
 
@@ -38,9 +39,9 @@ p {
 }
 
 .large-text {
-  font-size: 60vmin;
+  font-size: 50vmin;
 }
 
 .medium-text{
-  font-size: 20vmin;
+  font-size: 15vmin;
 }
