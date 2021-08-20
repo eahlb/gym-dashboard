@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 30vw;
+  text-align: center;
+  color: chartreuse;
+  background-color: black;
 }
 
-a {
-  color: #00B7FF;
+.base {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

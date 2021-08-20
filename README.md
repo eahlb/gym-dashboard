@@ -1,7 +1,7 @@
 ## Build
 This project is built to work on multiple different architectures. 
 
-`docker buildx build -f node.dockerfile --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag eahlberg12/gym-dashboard:{VERSION} .`
+`docker buildx build -f node.dockerfile --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag eahlberg12/gym-dashboard:latest .`
 
 Images can be found at docker hub (https://hub.docker.com/repository/docker/eahlberg12/gym-dashboard)
 
