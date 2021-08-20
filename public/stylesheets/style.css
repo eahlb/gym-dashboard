@@ -1,16 +1,46 @@
-body {
+* {
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  font-size: 30vw;
-  text-align: center;
   color: chartreuse;
   background-color: black;
 }
 
-.base {
+body {
   height: 95vh;
+  margin: 1vh;
+}
+
+.base {
+  height: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
   justify-content: center;
+}
+
+div {
+  display: flex;
+}
+
+button {
+  border-color: chartreuse;
+  border-width: 1vmin;
+  border-radius: 10%;
+  margin: 1vmin;
+  flex-grow: 1;
+}
+
+p {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.large-text {
+  font-size: 60vmin;
+}
+
+.medium-text{
+  font-size: 20vmin;
 }
