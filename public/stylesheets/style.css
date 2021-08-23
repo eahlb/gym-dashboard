@@ -2,6 +2,7 @@
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   color: chartreuse;
+  border-color: chartreuse;
   background-color: black;
 }
 
@@ -25,7 +26,6 @@ div {
 }
 
 button {
-  border-color: chartreuse;
   border-width: 1vmax;
   border-radius: 10%;
   margin: 1vmax;
