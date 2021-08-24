@@ -8,6 +8,6 @@ Images can be found at docker hub (https://hub.docker.com/repository/docker/eahl
 ## Development
 For development
 
-`docker run --rm -it -p 8080:3000 -v ${PWD}:/var/www eahlberg12/gym-dashboard dev`
+`docker run --rm -it -p 8080:3000 -v ${PWD}:/var/www -v ${PWD}/config_local:/var/www/config eahlberg12/gym-dashboard dev`
 
 can be used to run `nodemon` with the current directory as a mounted volume.
