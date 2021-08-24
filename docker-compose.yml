@@ -7,3 +7,5 @@ services:
     command: ["prod"]
     ports:
       - "8080:3000"
+    volumes: 
+      - ./config_local:/var/www/config
