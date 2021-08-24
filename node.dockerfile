@@ -5,8 +5,9 @@ ENV NODE_ENV=production
 
 WORKDIR /var/www
 COPY package*.json ./
-RUN npm install && npm install -g nodemon
-
+RUN npm install && \
+    npm install -g nodemon && \
+    npm install mongoose
 COPY . ./
 EXPOSE 3000
 

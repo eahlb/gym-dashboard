@@ -1,0 +1,7 @@
+{
+    "database": {
+        "protocol": "REPLACE_ME",
+        "host": "REPLACE_ME",
+        "credentials": "REPLACE_ME"
+    }
+}
