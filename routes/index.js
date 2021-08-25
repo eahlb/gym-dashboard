@@ -11,6 +11,12 @@ router.get('/timer', function (req, res) {
   res.render('timer', { title: 'Timer' });
 });
 
+router.get('/view-workout/:id', function (req, res) {
+  repo.findWorkout({ _id: req.params.id })
+    .then((value) => res.render('workout', { data: value[0] }));
+    // TODO: Fix error handling.
+});
+
 /* WORKOUT */
 router.post('/workout', function (req, res) {
   repo.saveWorkout(req.body)
