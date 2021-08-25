@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const setSchema = new Schema({
-    reps: { type: Number, required: true },
+    reps: { type: String, required: true },
     load: { type: String, required: true },
     time: { type: Number, required: true },
 });
 
 const excerciseSchema = new Schema({
-    name: { type: String, required: true },
+    excerciseName: { type: String, required: true },
     sets: [setSchema],
 });
 
 const workoutSchema = new Schema({
-    name: { type: String, required: true },
+    workoutName: { type: String, required: true },
     excercises: [excerciseSchema],
 });
 

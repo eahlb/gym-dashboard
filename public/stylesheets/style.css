@@ -12,36 +12,37 @@ body {
   margin: 2vh 0 0 2vw;
 }
 
-.base {
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  align-content: stretch;
-  align-items: stretch;
-  justify-content: center;
-}
-
 div {
   display: flex;
 }
 
 button {
-  border-width: 1vmax;
   border-radius: 10%;
   margin: 1vmax;
+}
+
+h1 {
+  font-size: 15vmin;
+}
+
+.grow {
   flex-grow: 1;
 }
 
-p {
-  margin: 0;
-  flex-grow: 1;
+.center{
   text-align: center;
 }
 
 .large-text {
   font-size: 50vmin;
+  margin: 1vmin;
+  flex-grow: 1;
+  text-align: center;
 }
 
-.medium-text{
+.medium-text {
   font-size: 15vmin;
+  margin: 1vmin;
+  flex-grow: 1;
+  text-align: center;
 }

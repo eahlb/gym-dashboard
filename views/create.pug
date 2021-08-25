@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+  h1 Create workout
+  form(action='/workout', method='POST')
+    div
+      label Workout name: 
+      input.grow(type='text', name='workoutName', required='true')
+    div 
+      button(type='submit') Create workout
