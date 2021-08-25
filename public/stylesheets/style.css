@@ -4,6 +4,7 @@
   color: chartreuse;
   border-color: chartreuse;
   background-color: black;
+  margin: 1vmin;
 }
 
 body {
@@ -42,6 +43,13 @@ h1 {
 
 .medium-text {
   font-size: 15vmin;
+  margin: 1vmin;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.small-text {
+  font-size: 5vmin;
   margin: 1vmin;
   flex-grow: 1;
   text-align: center;
