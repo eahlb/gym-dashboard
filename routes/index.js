@@ -11,25 +11,23 @@ router.get('/timer', function (req, res) {
   res.render('timer', { title: 'Timer' });
 });
 
-router.get('/create', function (req, res) {
-  res.render('create', { title: 'Create Workout' });
-});
-
 /* WORKOUT */
 router.post('/workout', function (req, res) {
   repo.saveWorkout(req.body)
     .then((value) => res.send(value))
-    .catch((reason) => res.status(500).json({ error: reason }));
+    .catch((reason) => res.status(500).json(reason));
 });
 
 router.get('/workout', function (req, res) {
-  // TODO: get all workouts
-  res.send('OK GET')
+  repo.findWorkout({})
+    .then((value) => res.send(value))
+    .catch((reason) => res.status(500).json(reason));
 });
 
-router.get('/workout/:name', function (req, res) {
-  // TODO: get workouts by name
-  res.send('OK GET')
+router.get('/workout/:id', function (req, res) {
+  repo.findWorkout({ _id: req.params.id })
+    .then((value) => res.send(value))
+    .catch((reason) => res.status(500).json(reason));
 })
 
 module.exports = router;
