@@ -14,6 +14,7 @@ const excerciseSchema = new Schema({
 
 const workoutSchema = new Schema({
     workoutName: { type: String, required: true },
+    status: { type: String, required: true, enum: ['PENDING', 'COMPLETED'] },
     excercises: [excerciseSchema],
 });
 
