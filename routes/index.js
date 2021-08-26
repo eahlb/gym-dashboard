@@ -37,4 +37,10 @@ router.get('/workout/:id', function (req, res) {
     .catch((reason) => res.status(500).json(reason));
 })
 
+router.put('/workout/:id', function (req, res) {
+  repo.updateWorkout(req.params.id, req.body)
+    .then((value) => res.send(value))
+    .catch((reason) => res.status(500).json(reason));
+});
+
 module.exports = router;
