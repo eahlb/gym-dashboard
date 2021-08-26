@@ -4,7 +4,8 @@ const repo = require('../lib/workoutRepository');
 
 /* GET pages. */
 router.get('/', function (req, res) {
-  res.render('index', { title: 'Dashboard' });
+  repo.findWorkouts()
+    .then((value) => res.render('index', { title: 'Dashboard', workouts: value }));
 });
 
 router.get('/timer', function (req, res) {
@@ -12,9 +13,9 @@ router.get('/timer', function (req, res) {
 });
 
 router.get('/view-workout/:id', function (req, res) {
-  repo.findWorkout({ _id: req.params.id })
-    .then((value) => res.render('workout', { data: value[0] }));
-    // TODO: Fix error handling.
+  repo.findWorkout(req.params.id)
+    .then((value) => res.render('workout', { data: value }))
+    .catch((reason) => res.render('error', { error: reason }));
 });
 
 /* WORKOUT */
@@ -25,13 +26,13 @@ router.post('/workout', function (req, res) {
 });
 
 router.get('/workout', function (req, res) {
-  repo.findWorkout({})
+  repo.findWorkouts()
     .then((value) => res.send(value))
     .catch((reason) => res.status(500).json(reason));
 });
 
 router.get('/workout/:id', function (req, res) {
-  repo.findWorkout({ _id: req.params.id })
+  repo.findWorkout(req.params.id)
     .then((value) => res.send(value))
     .catch((reason) => res.status(500).json(reason));
 })

@@ -1,8 +1,9 @@
 extends layout 
 
 block content
-  h1= data.workoutName
+  h1.medium-text= data.workoutName
   each e in data.excercises
-    h2= e.excerciseName
-    each s in e.sets 
-      h3 #{s.reps} x #{s.load}
+    h2.small-text= e.excerciseName
+    ol
+      each s in e.sets 
+        li #{s.reps} x #{s.load}

@@ -1,6 +1,5 @@
 * {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
   color: chartreuse;
   border-color: chartreuse;
   background-color: black;
@@ -22,35 +21,26 @@ button {
   margin: 1vmax;
 }
 
-h1 {
-  font-size: 15vmin;
-}
-
 .grow {
   flex-grow: 1;
 }
 
-.center{
+.center {
   text-align: center;
+  flex-grow: 1;
 }
 
 .large-text {
   font-size: 50vmin;
   margin: 1vmin;
-  flex-grow: 1;
-  text-align: center;
 }
 
 .medium-text {
   font-size: 15vmin;
   margin: 1vmin;
-  flex-grow: 1;
-  text-align: center;
 }
 
 .small-text {
   font-size: 5vmin;
   margin: 1vmin;
-  flex-grow: 1;
-  text-align: center;
 }
