@@ -7,3 +7,6 @@ block content
     ol
       each s in e.sets 
         li #{s.reps} x #{s.load}
+  form(method='POST', action=`/update-workout/${data._id}`)
+    input(type='hidden', name='status', value='COMPLETED')
+    button(type='submit').center Complete workout
