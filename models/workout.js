@@ -18,4 +18,9 @@ const workoutSchema = new Schema({
     excercises: [excerciseSchema],
 });
 
+workoutSchema.pre('updateOne', function (next) {
+    this.options.runValidators = true;
+    next();
+})
+
 module.exports = mongoose.model('Workout', workoutSchema);
