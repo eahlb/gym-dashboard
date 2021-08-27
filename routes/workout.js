@@ -9,7 +9,6 @@ router.post('/', function (req, res) {
 });
 
 router.get('/', function (req, res) {
-    console.log('HEJ')
     repo.findWorkouts()
         .then((value) => res.send(value))
         .catch((reason) => res.status(500).json(reason));
