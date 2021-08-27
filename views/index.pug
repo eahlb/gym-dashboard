@@ -4,7 +4,7 @@ block content
   h1.center Welcome
   ol
     li
-      a(href='/timer') Timer
+      a(href='timer') Timer
     each wo in workouts 
      li
-       a(href=`view-workout/${wo._id}`) View #{wo.workoutName}
+       a(href=`workout/${wo._id}`) View #{wo.workoutName}
