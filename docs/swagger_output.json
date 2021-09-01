@@ -1,0 +1,166 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Gym dashboard",
+    "description": ""
+  },
+  "host": "localhost:8080",
+  "basePath": "/api",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/workout": {
+      "post": {
+        "tags": [
+          "Workout"
+        ],
+        "description": "Create a new workout",
+        "parameters": [
+          {
+            "name": "New workout",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/workout"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Workout"
+        ],
+        "description": "Get all workouts",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/workout/{id}": {
+      "get": {
+        "tags": [
+          "Workout"
+        ],
+        "description": "Get a workout",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Workout"
+        ],
+        "description": "Update a workout",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Updated workout",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/workout"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "workout": {
+      "type": "object",
+      "properties": {
+        "workoutName": {
+          "type": "string",
+          "example": "Test workout"
+        },
+        "status": {
+          "type": "string",
+          "example": "PENDING"
+        },
+        "excercises": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "excerciseName": {
+                "type": "string",
+                "example": "Test exercise"
+              },
+              "sets": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "reps": {
+                      "type": "string",
+                      "example": "10"
+                    },
+                    "load": {
+                      "type": "string",
+                      "example": "100 kg"
+                    },
+                    "time": {
+                      "type": "number",
+                      "example": 120
+                    }
+                  },
+                  "required": [
+                    "reps",
+                    "load",
+                    "time"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "excerciseName",
+              "sets"
+            ]
+          }
+        }
+      },
+      "required": [
+        "workoutName",
+        "status",
+        "excercises"
+      ]
+    }
+  }
+}

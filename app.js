@@ -4,15 +4,23 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Routes
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const workoutRouter = require('./routes/workout')
 
+// DB
 const config = require('./config/config.json');
 const db = require('./lib/database');
 db.init(config.database);
 
-var app = express();
+// Documentation
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./docs/swagger_output.json')
+
+const app = express();
+
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

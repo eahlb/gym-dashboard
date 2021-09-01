@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "prod": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "swagger": "node lib/swagger.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,9 +14,11 @@
     "http-errors": "~1.6.3",
     "mongoose": "^5.13.8",
     "morgan": "~1.9.1",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "swagger-autogen": "^2.11.2",
+    "swagger-ui-express": "^4.1.6"
   },
   "nodemonConfig": {
-    "ext": "js,css,pug"
+    "ext": "js,css,pug,json"
   }
 }
