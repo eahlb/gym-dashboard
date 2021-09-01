@@ -36,9 +36,8 @@ router.get(`${base}/:id`, function (req, res) {
         #swagger.tags = ['Workout']
         #swagger.description = "Get a workout"
     */
-    // TODO: Add 404 code.
     repo.findWorkout(req.params.id)
-        .then((value) => res.status(200).json(value))
+        .then((value) => res.status(value ? 200 : 404).json(value))
         .catch((reason) => res.status(500).json(reason));
 })
 
@@ -52,9 +51,8 @@ router.put(`${base}/:id`, function (req, res) {
             schema: { $ref: "#/definitions/workout" }
         }
     */
-    // TODO: Add 404 code.
     repo.updateWorkout(req.params.id, req.body)
-        .then((value) => res.status(200).json(value))
+        .then((value) => res.status(value.n > 0 ? 204 : 404).json(null))
         .catch((reason) => res.status(500).json(reason));
 });
 
