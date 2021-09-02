@@ -1,6 +1,7 @@
 const swaggerAutoGen = require('swagger-autogen')();
 const output = './docs/swagger_output.json';
-const routes = ['./routes/workout.js'];
+const routes = ['./server/routes/workout.js'];
+// TODO: Can't generate new file...
 
 const doc = {
     info: {

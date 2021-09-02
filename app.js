@@ -5,18 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // Routes
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const workoutRouter = require('./routes/workout')
+const indexRouter = require('./server/routes/index');
+const usersRouter = require('./server/routes/users');
+const workoutRouter = require('./server/routes/workout')
 
 // DB
 const config = require('./config/config.json');
-const db = require('./lib/database');
+const db = require('./server/database/database');
 db.init(config.database);
 
 // Documentation
 const swaggerUi = require('swagger-ui-express')
-const swaggerFile = require('./docs/swagger_output.json')
+const swaggerFile = require('./server/docs/swagger_output.json')
 
 const app = express();
 

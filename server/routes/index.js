@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const repo = require('../lib/workoutRepository');
+const repo = require('../database/workoutRepository');
 
 router.get('/', function (req, res) {
   repo.findWorkouts({ status: 'PENDING' })

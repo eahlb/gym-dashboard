@@ -1,4 +1,4 @@
-const Workout = require('../models/workout');
+const Workout = require('./models/workout');
 const mongoose = require('mongoose');
 
 const workoutRepository = function () {
