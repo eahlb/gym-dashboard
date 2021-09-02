@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const database = function () {
     let connection = null;
 
-    const init = function (config) {
+    const open = function (config) {
         console.log('Connecting to MongoDB database');
         const options = {
             promiseLibrary: global.Promise,
@@ -31,7 +31,7 @@ const database = function () {
     }
 
     return {
-        init: init,
+        open: open,
         close: close
     };
 

@@ -17,9 +17,9 @@ module.exports = function () {
         app.use(express.urlencoded({ extended: false }));
         app.use(cookieParser());
 
-        // TODO: Fix filenames.
-        const db = require('./database/database');
-        db.init(config.database);
+        // Open database connection.
+        const db = require('./database');
+        db.open(config.database);
 
         // TODO: Move route logic to routes -> const routes = require('./routes');
         const workoutRoutes = require('./routes/workout');
