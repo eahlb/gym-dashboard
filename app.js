@@ -5,18 +5,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // Routes
-const indexRouter = require('./server/routes/index');
-const usersRouter = require('./server/routes/users');
+const indexRouter = require('./server/routes/views');
 const workoutRouter = require('./server/routes/workout')
 
 // DB
 const config = require('./config/config.json');
-const db = require('./server/database/database');
-db.init(config.database);
+const db = require('./server/database');
+db.open(config.database);
 
 // Documentation
 const swaggerUi = require('swagger-ui-express')
-const swaggerFile = require('./server/docs/swagger_output.json')
+const swaggerFile = require('./server/swagger-output.json')
 
 const app = express();
 
@@ -33,8 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api', workoutRouter);
+app.use('/api/workout', workoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

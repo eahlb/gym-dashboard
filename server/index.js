@@ -20,9 +20,9 @@ module.exports = function () {
         const db = require('./database');
         db.open(config.database);
 
-        // TODO: Move route logic to routes -> const routes = require('./routes');
-        const workoutRoutes = require('./routes/workout');
-        app.use('/api', workoutRoutes);
+        // Add routing.
+        const routes = require('./routes');
+        routes.init(app);
 
         // Create documentation UI.
         const swaggerUi = require('swagger-ui-express')

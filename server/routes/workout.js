@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const repo = require('../database/workoutRepository');
-const base = '/workout';
 
-router.post(base, function (req, res) {
+router.post('/', function (req, res) {
     /*
         #swagger.tags = ['Workout']
         #swagger.description = "Create a new workout"
@@ -21,7 +20,7 @@ router.post(base, function (req, res) {
         .catch((reason) => res.status(500).json(reason));
 });
 
-router.get(base, function (req, res) {
+router.get('/', function (req, res) {
     /*
         #swagger.tags = ['Workout']
         #swagger.description = "Get all workouts"
@@ -31,7 +30,7 @@ router.get(base, function (req, res) {
         .catch((reason) => res.status(500).json(reason));
 });
 
-router.get(`${base}/:id`, function (req, res) {
+router.get('/:id', function (req, res) {
     /*
         #swagger.tags = ['Workout']
         #swagger.description = "Get a workout"
@@ -41,7 +40,7 @@ router.get(`${base}/:id`, function (req, res) {
         .catch((reason) => res.status(500).json(reason));
 })
 
-router.put(`${base}/:id`, function (req, res) {
+router.put('/:id', function (req, res) {
     /*
         #swagger.tags = ['Workout']
         #swagger.description = "Update a workout"
