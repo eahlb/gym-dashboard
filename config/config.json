@@ -1,4 +1,6 @@
 {
+    "env": "development",
+    "port": 3000,
     "database": {
         "protocol": "REPLACE_ME",
         "host": "REPLACE_ME",
