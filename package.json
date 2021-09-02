@@ -5,8 +5,8 @@
   "scripts": {
     "prod": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "api-only": "nodemon index.js",
-    "swagger": "node server/docs/swagger.js"
+    "api-only": "node ./docs/swagger.js && nodemon index.js",
+    "gen-docs": "node ./docs/swagger.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

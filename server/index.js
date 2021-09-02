@@ -2,7 +2,6 @@ const express = require('express');
 const http = require('http');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const createError = require('http-errors');
 
 module.exports = function () {
     const app = express();
@@ -25,9 +24,9 @@ module.exports = function () {
         const workoutRoutes = require('./routes/workout');
         app.use('/api', workoutRoutes);
 
-        // TODO: Move logic to documentation.
+        // Create documentation UI.
         const swaggerUi = require('swagger-ui-express')
-        const swaggerFile = require('./docs/swagger_output.json')
+        const swaggerFile = require('./swagger-output.json')
         app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
         // Create server.
