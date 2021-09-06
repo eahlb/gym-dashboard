@@ -18,10 +18,10 @@
     "application/json"
   ],
   "paths": {
-    "/workout": {
+    "/workout/": {
       "post": {
         "tags": [
-          "Workout"
+          "CRUD"
         ],
         "description": "Create a new workout",
         "parameters": [
@@ -42,7 +42,7 @@
       },
       "get": {
         "tags": [
-          "Workout"
+          "CRUD"
         ],
         "description": "Get all workouts",
         "parameters": [],
@@ -56,7 +56,7 @@
     "/workout/{id}": {
       "get": {
         "tags": [
-          "Workout"
+          "CRUD"
         ],
         "description": "Get a workout",
         "parameters": [
@@ -78,7 +78,7 @@
       },
       "put": {
         "tags": [
-          "Workout"
+          "CRUD"
         ],
         "description": "Update a workout",
         "parameters": [
@@ -103,6 +103,29 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/workout-creation": {
+      "post": {
+        "tags": [
+          "Processes"
+        ],
+        "description": "Initiate a workout creation.\r  Number of inputs must match template parameters",
+        "parameters": [
+          {
+            "name": "Data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/workoutCreation"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -166,6 +189,29 @@
         "workoutName",
         "status",
         "excercises"
+      ]
+    },
+    "workoutCreation": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "type": "string",
+          "example": "TEMPLATE_ID"
+        },
+        "inputs": {
+          "type": "array",
+          "example": [
+            "VAR#1",
+            "VAR#2"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "template",
+        "inputs"
       ]
     }
   }

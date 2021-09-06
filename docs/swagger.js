@@ -1,7 +1,10 @@
 const swaggerAutoGen = require('swagger-autogen')();
 
 const output = './server/swagger-output.json';
-const routes = ['./server/routes/workout.js'];
+const routes = [
+    './server/routes/workout.js',
+    './server/routes/process.js',
+];
 
 const doc = {
     info: {
@@ -27,6 +30,10 @@ const doc = {
                     $time: 120,
                 }]
             }],
+        },
+        workoutCreation: {
+            $template: 'TEMPLATE_ID',
+            $inputs: ['VAR#1', 'VAR#2'],
         },
     },
 };
