@@ -1,9 +1,9 @@
 const workoutRoutes = require('./workout');
-const processRoutes = require('./process')
+const programRoutes = require('./program')
 
 const init = function (app) {
   app.use('/api', workoutRoutes);
-  app.use('/api', processRoutes);
+  app.use('/api', programRoutes);
 }
 
 module.exports = {

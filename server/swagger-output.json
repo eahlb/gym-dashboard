@@ -21,7 +21,7 @@
     "/workout/": {
       "post": {
         "tags": [
-          "CRUD"
+          "Workout"
         ],
         "description": "Create a new workout",
         "parameters": [
@@ -42,7 +42,7 @@
       },
       "get": {
         "tags": [
-          "CRUD"
+          "Workout"
         ],
         "description": "Get all workouts",
         "parameters": [],
@@ -56,7 +56,7 @@
     "/workout/{id}": {
       "get": {
         "tags": [
-          "CRUD"
+          "Workout"
         ],
         "description": "Get a workout",
         "parameters": [
@@ -78,7 +78,7 @@
       },
       "put": {
         "tags": [
-          "CRUD"
+          "Workout"
         ],
         "description": "Update a workout",
         "parameters": [
@@ -107,22 +107,34 @@
         }
       }
     },
-    "/workout-creation": {
+    "/program": {
       "post": {
         "tags": [
-          "Processes"
+          "Program"
         ],
-        "description": "Initiate a workout creation.\r  Number of inputs must match template parameters",
+        "description": "Create a chain of workouts.",
         "parameters": [
           {
             "name": "Data",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/workoutCreation"
+              "$ref": "#/definitions/program"
             }
           }
         ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Program"
+        ],
+        "description": "Get all programs.",
+        "parameters": [],
         "responses": {
           "500": {
             "description": "Internal Server Error"
@@ -191,27 +203,90 @@
         "excercises"
       ]
     },
-    "workoutCreation": {
+    "program": {
       "type": "object",
       "properties": {
-        "template": {
+        "programName": {
           "type": "string",
-          "example": "TEMPLATE_ID"
+          "example": "BP program"
         },
-        "inputs": {
+        "input": {
           "type": "array",
-          "example": [
-            "VAR#1",
-            "VAR#2"
-          ],
           "items": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "example": "BP-1RM"
+              },
+              "value": {
+                "type": "string",
+                "example": "100 kg"
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ]
+          }
+        },
+        "workouts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "workoutName": {
+                "type": "string",
+                "example": "Week 1, Workout 1"
+              },
+              "excercises": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "excerciseName": {
+                      "type": "string",
+                      "example": "BP"
+                    },
+                    "sets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "reps": {
+                            "type": "string",
+                            "example": "5"
+                          },
+                          "load": {
+                            "type": "string",
+                            "example": "75% * %BP-1RM%"
+                          }
+                        },
+                        "required": [
+                          "reps",
+                          "load"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "excerciseName",
+                    "sets"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "workoutName",
+              "excercises"
+            ]
           }
         }
       },
       "required": [
-        "template",
-        "inputs"
+        "programName",
+        "input",
+        "workouts"
       ]
     }
   }

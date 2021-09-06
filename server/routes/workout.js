@@ -4,7 +4,7 @@ const repo = require('../database/workoutRepository');
 
 router.post('/workout/', function (req, res) {
     /*
-        #swagger.tags = ['CRUD']
+        #swagger.tags = ['Workout']
         #swagger.description = "Create a new workout"
         #swagger.parameters['New workout'] = {
             in: 'body',
@@ -22,7 +22,7 @@ router.post('/workout/', function (req, res) {
 
 router.get('/workout/', function (req, res) {
     /*
-        #swagger.tags = ['CRUD']
+        #swagger.tags = ['Workout']
         #swagger.description = "Get all workouts"
     */
     repo.findWorkouts()
@@ -32,7 +32,7 @@ router.get('/workout/', function (req, res) {
 
 router.get('/workout/:id', function (req, res) {
     /*
-        #swagger.tags = ['CRUD']
+        #swagger.tags = ['Workout']
         #swagger.description = "Get a workout"
     */
     repo.findWorkout(req.params.id)
@@ -42,7 +42,7 @@ router.get('/workout/:id', function (req, res) {
 
 router.put('/workout/:id', function (req, res) {
     /*
-        #swagger.tags = ['CRUD']
+        #swagger.tags = ['Workout']
         #swagger.description = "Update a workout"
         #swagger.parameters['Updated workout'] = {
             in: 'body',
