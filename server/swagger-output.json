@@ -176,16 +176,11 @@
                     "load": {
                       "type": "string",
                       "example": "100 kg"
-                    },
-                    "time": {
-                      "type": "number",
-                      "example": 120
                     }
                   },
                   "required": [
                     "reps",
-                    "load",
-                    "time"
+                    "load"
                   ]
                 }
               }
@@ -208,7 +203,7 @@
       "properties": {
         "programName": {
           "type": "string",
-          "example": "BP program"
+          "example": "Test program"
         },
         "input": {
           "type": "array",
@@ -217,7 +212,7 @@
             "properties": {
               "name": {
                 "type": "string",
-                "example": "BP-1RM"
+                "example": "1RM"
               },
               "value": {
                 "type": "string",
@@ -259,7 +254,7 @@
                           },
                           "load": {
                             "type": "string",
-                            "example": "75% * %BP-1RM%"
+                            "example": "75% * %1RM%"
                           }
                         },
                         "required": [

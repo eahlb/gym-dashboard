@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const setSchema = new Schema({
     reps: { type: String, required: true },
     load: { type: String, required: true },
-    time: { type: Number, required: true },
 });
 
 const excerciseSchema = new Schema({

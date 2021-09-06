@@ -23,7 +23,7 @@ const doc = {
             $status: 'PENDING',
             $excercises: [{
                 $excerciseName: 'Test exercise',
-                $sets: [{ $reps: '10', $load: '100 kg', $time: 120 }]
+                $sets: [{ $reps: '10', $load: '100 kg' }],
             }],
         },
         program: {
