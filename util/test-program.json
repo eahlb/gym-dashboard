@@ -1,0 +1,73 @@
+{
+    "programName": "BP",
+    "input": [
+        { "name": "BP-1RM", "value": "80 kg" },
+        { "name": "COMP1-NAME", "value": "Curls" },
+        { "name": "COMP1-REPS", "value": "10-12" },
+        { "name": "COMP1-LOAD", "value": "22.5 kg" },
+        { "name": "COMP2-NAME", "value": "Chins" },
+        { "name": "COMP2-REPS", "value": "EX" },
+        { "name": "COMP2-LOAD", "value": "22.5 kg" }
+    ],
+    "workouts": [
+        {
+            "workoutName": "Week 1, Workout 1",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":5, "load":"75% * %1RM%"},
+                        {"reps":5, "load":"75% * %1RM%"},
+                        {"reps":5, "load":"75% * %1RM%"},
+                        {"reps":5, "load":"75% * %1RM%"},
+                        {"reps":5, "load":"75% * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP1-NAME%",
+                    "sets": [
+                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"},
+                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"},
+                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"},
+                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 1, Workout 2",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":8, "load":"50% * %1RM%"},
+                        {"reps":6, "load":"60% * %1RM%"},
+                        {"reps":4, "load":"70% * %1RM%"},
+                        {"reps":4, "load":"70% * %1RM%"},
+                        {"reps":3, "load":"89% * %1RM%"},
+                        {"reps":3, "load":"89% * %1RM%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 1, Workout 3",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":"AMRAP", "load":"80% * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP2-NAME%",
+                    "sets": [
+                        {"reps":"COMP2-REPS", "load": "%COMP2-NAME%"},
+                        {"reps":"COMP2-REPS", "load": "%COMP2-NAME%"},
+                        {"reps":"COMP2-REPS", "load": "%COMP2-NAME%"}
+                    ]
+                }
+            ]
+        }
+    ]
+}
