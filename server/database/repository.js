@@ -8,36 +8,25 @@ const saveProgram = (program) => {
 }
 
 const findProgram = (id) => {
-    return Program.findOne({ _id: id }).lean();
+    return Program.findOne({ _id: id });
 }
 
 const listPrograms = (filter = {}) => {
     return Program.find(filter).lean();
 }
 
-const saveWorkout = (workout) => {
-    const w = new Workout(workout)
-    return w.save();
-}
-
-const findWorkout = (id) => {
-    return Workout.findOne({ _id: id }).lean();
-}
-
-const listWorkouts = (filter = {}) => {
-    return Program.find().find(filter).lean();
-}
-
-const updateWorkout = (id, operations) => {
-    return Workout.updateOne({ _id: id }, { $set: operations });
+const listWorkouts = (programId) => {
+    return Program.findOne({ _id: programId }).select('workouts');
 }
 
 module.exports = {
     saveProgram: saveProgram,
     findProgram: findProgram,
     listPrograms: listPrograms,
-    saveWorkout: saveWorkout,
-    findWorkout: findWorkout,
-    listWorkouts: listWorkouts,
-    updateWorkout: updateWorkout,
+    listWorkouts,
+    // These will be removed.
+    old_saveWorkout: (workout) => Workout(workout).save(),
+    old_findWorkout: (id) => Workout.findOne({ _id: id }).lean(),
+    old_listWorkouts: (filter = {}) => Program.find().find(filter).lean(),
+    old_updateWorkout: (id, operations) => Workout.updateOne({ _id: id }, { $set: operations }),
 };

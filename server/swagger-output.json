@@ -18,96 +18,7 @@
     "application/json"
   ],
   "paths": {
-    "/workout/": {
-      "post": {
-        "tags": [
-          "Workout"
-        ],
-        "description": "Create a new workout",
-        "parameters": [
-          {
-            "name": "New workout",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/workout"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Workout"
-        ],
-        "description": "Get all workouts",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/workout/{id}": {
-      "get": {
-        "tags": [
-          "Workout"
-        ],
-        "description": "Get a workout",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Workout"
-        ],
-        "description": "Update a workout",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "Updated workout",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/workout"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/program": {
+    "/": {
       "post": {
         "tags": [
           "Program"
@@ -148,7 +59,7 @@
         }
       }
     },
-    "/program/{id}": {
+    "/{id}": {
       "get": {
         "tags": [
           "Program"

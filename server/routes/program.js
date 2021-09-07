@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const repo = require('../database/repository');
 
-router.post('/program', (req, res) => {
+router.post('/', (req, res) => {
     /*
         #swagger.tags = ['Program']
         #swagger.description = "Create a chain of workouts."
@@ -20,7 +20,7 @@ router.post('/program', (req, res) => {
         .catch((reason) => res.status(500).json(reason));
 });
 
-router.get('/program', (req, res) => {
+router.get('/', (req, res) => {
     /*
         #swagger.tags = ['Program']
         #swagger.description = "Get all programs."
@@ -30,7 +30,7 @@ router.get('/program', (req, res) => {
         .catch((reason) => res.status(500).json(reason));
 })
 
-router.get('/program/:id', function (req, res) {
+router.get('/:id', function (req, res) {
     /*
         #swagger.tags = ['Program']
         #swagger.description = "Get a program"

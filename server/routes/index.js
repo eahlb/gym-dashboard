@@ -1,9 +1,24 @@
-const workoutRoutes = require('./workout');
-const programRoutes = require('./program')
+const express = require('express');
+const util = require('./util')
+const repo = require('../database/repository');
 
 const init = function (app) {
-  app.use('/api', workoutRoutes);
-  app.use('/api', programRoutes);
+  // Create routers.
+  const programRouter = express.Router();
+  const workoutRouter = express.Router({ mergeParams: true });
+  // Nest workout router.
+  programRouter.use('/:programId/workout', workoutRouter);
+  // Create program routes.
+  programRouter.route('/:programId')
+    .get((req, res) => util.GET(repo.findProgram, req.params.programId, res));
+  programRouter.route('/')
+    .get((req, res) => util.GET_ALL(repo.listPrograms, {}, res))
+    .post((req, res) => util.POST(repo.saveProgram, req.body, res));
+  // Create workout routes.
+  workoutRouter.route('/')
+    .get((req, res) => util.GET_ALL(repo.listWorkouts, req.params.programId, res));
+  // Set base route.
+  app.use('/api/program', programRouter);
 }
 
 module.exports = {
