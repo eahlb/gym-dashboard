@@ -4,8 +4,9 @@ const GET_ALL = (func, param, res) => {
         .catch((reason) => res.status(500).json(reason));
 };
 
-const GET = (func, id, res) => {
+const GET = (func, id, res, transform = (a) => a) => {
     func(id)
+        .map(transform)
         .then((value) => res.status(value ? 200 : 404).json(value))
         .catch((reason) => res.status(500).json(reason));
 };

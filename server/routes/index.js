@@ -1,6 +1,7 @@
 const express = require('express');
 const util = require('./util')
 const repo = require('../database/repository');
+const compute = require('../process/compute');
 
 const init = function (app) {
   // Create routers.
@@ -18,7 +19,7 @@ const init = function (app) {
   workoutRouter.route('/')
     .get((req, res) => util.GET_ALL(repo.listWorkouts, req.params, res));
   workoutRouter.route('/:workoutId')
-    .get((req, res) => util.GET(repo.findWorkout, req.params, res));
+    .get((req, res) => util.GET(repo.findWorkout, req.params, res, compute));
   // Set base route.
   app.use('/api/program', programRouter);
 }

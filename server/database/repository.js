@@ -17,12 +17,13 @@ const findWorkout = (params) => {
             _id: params.programId,
             'workouts._id': params.workoutId,
         })
+        .lean()
         .map((program) => {
-            const input = program.input;
             const data = program.workouts
                 .filter((workout) => workout._id == params.workoutId)
                 .pop()
-            // TODO: Compute workout exercises.
+            // Add input parameters to data.
+            data.input = program.input;
             return data;
         });
 }
