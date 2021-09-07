@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const repo = require('../database/repository');
 
 router.post('/program', (req, res) => {
     /*
@@ -11,7 +12,12 @@ router.post('/program', (req, res) => {
             schema: { $ref: "#/definitions/program" }
         }
     */
-    res.status(500).send({ error: 'Not implemented' });
+    repo.saveProgram(req.body)
+        .then((value) =>
+            res.status(201)
+                .location(value._id)
+                .json(value))
+        .catch((reason) => res.status(500).json(reason));
 });
 
 router.get('/program', (req, res) => {
