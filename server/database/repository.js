@@ -7,22 +7,40 @@ const saveProgram = (program) => {
     return p.save();
 }
 
-const findProgram = (id) => {
-    return Program.findOne({ _id: id });
+const findProgram = (params) => {
+    return Program.findById(params.programId);
 }
 
-const listPrograms = (filter = {}) => {
-    return Program.find(filter).lean();
+const findWorkout = (params) => {
+    return Program
+        .findOne({
+            _id: params.programId,
+            'workouts._id': params.workoutId,
+        })
+        .map((program) => {
+            const input = program.input;
+            const data = program.workouts
+                .filter((workout) => workout._id == params.workoutId)
+                .pop()
+            // TODO: Compute workout exercises.
+            return data;
+        });
 }
 
-const listWorkouts = (programId) => {
-    return Program.findOne({ _id: programId }).select('workouts');
+const listPrograms = (params) => {
+    return Program.find(params);
+}
+
+const listWorkouts = (params) => {
+    return Program.findById(params.programId)
+        .map((program) => program.workouts);
 }
 
 module.exports = {
-    saveProgram: saveProgram,
-    findProgram: findProgram,
-    listPrograms: listPrograms,
+    saveProgram,
+    findProgram,
+    findWorkout,
+    listPrograms,
     listWorkouts,
     // These will be removed.
     old_saveWorkout: (workout) => Workout(workout).save(),

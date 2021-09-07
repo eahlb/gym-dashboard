@@ -10,13 +10,15 @@ const init = function (app) {
   programRouter.use('/:programId/workout', workoutRouter);
   // Create program routes.
   programRouter.route('/:programId')
-    .get((req, res) => util.GET(repo.findProgram, req.params.programId, res));
+    .get((req, res) => util.GET(repo.findProgram, req.params, res));
   programRouter.route('/')
-    .get((req, res) => util.GET_ALL(repo.listPrograms, {}, res))
+    .get((req, res) => util.GET_ALL(repo.listPrograms, req.params, res))
     .post((req, res) => util.POST(repo.saveProgram, req.body, res));
   // Create workout routes.
   workoutRouter.route('/')
-    .get((req, res) => util.GET_ALL(repo.listWorkouts, req.params.programId, res));
+    .get((req, res) => util.GET_ALL(repo.listWorkouts, req.params, res));
+  workoutRouter.route('/:workoutId')
+    .get((req, res) => util.GET(repo.findWorkout, req.params, res));
   // Set base route.
   app.use('/api/program', programRouter);
 }
