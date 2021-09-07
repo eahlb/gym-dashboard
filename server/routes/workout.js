@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const repo = require('../database/workoutRepository');
+const repo = require('../database/repository');
 
 router.post('/workout/', function (req, res) {
     /*

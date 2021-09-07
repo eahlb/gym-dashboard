@@ -17,9 +17,23 @@ const workoutSchema = new Schema({
     excercises: [excerciseSchema],
 });
 
-workoutSchema.pre('updateOne', function (next) {
+const inputSchema = new Schema({
+    name: { type: String, required: true },
+    value: { type: String, required: true },
+});
+
+const programSchema = new Schema({
+    programName: { type: String, required: true },
+    input: [inputSchema],
+    workouts: [workoutSchema],
+});
+
+workoutSchema.pre('updateOne', (next) => {
     this.options.runValidators = true;
     next();
-})
+});
 
-module.exports = mongoose.model('Workout', workoutSchema);
+module.exports = {
+    workout: mongoose.model('Workout', workoutSchema),
+    program: mongoose.model('Program', programSchema),
+};
