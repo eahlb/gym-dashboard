@@ -25,7 +25,9 @@ router.get('/program', (req, res) => {
         #swagger.tags = ['Program']
         #swagger.description = "Get all programs."
     */
-    res.status(500).send({ error: 'Not implemented' });
+    repo.listPrograms()
+        .then((value) => res.status(200).json(value))
+        .catch((reason) => res.status(500).json(reason));
 })
 
 module.exports = router;

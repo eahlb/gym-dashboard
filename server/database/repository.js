@@ -11,7 +11,7 @@ const findWorkout = (id) => {
     return Workout.findOne({ _id: id }).lean();
 }
 
-const findWorkouts = (filter = {}) => {
+const listWorkouts = (filter = {}) => {
     return Workout.find(filter).lean();
 }
 
@@ -24,10 +24,15 @@ const saveProgram = (program) => {
     return p.save();
 }
 
+const listPrograms = (filter = {}) => {
+    return Program.find(filter).lean();
+}
+
 module.exports = {
     saveWorkout: saveWorkout,
     findWorkout: findWorkout,
-    findWorkouts: findWorkouts,
+    listWorkouts: listWorkouts,
     updateWorkout: updateWorkout,
     saveProgram: saveProgram,
+    listPrograms: listPrograms,
 };

@@ -25,7 +25,7 @@ router.get('/workout/', function (req, res) {
         #swagger.tags = ['Workout']
         #swagger.description = "Get all workouts"
     */
-    repo.findWorkouts()
+    repo.listWorkouts()
         .then((value) => res.status(200).json(value))
         .catch((reason) => res.status(500).json(reason));
 });
