@@ -30,4 +30,14 @@ router.get('/program', (req, res) => {
         .catch((reason) => res.status(500).json(reason));
 })
 
+router.get('/program/:id', function (req, res) {
+    /*
+        #swagger.tags = ['Program']
+        #swagger.description = "Get a program"
+    */
+    repo.findProgram(req.params.id)
+        .then((value) => res.status(value ? 200 : 404).json(value))
+        .catch((reason) => res.status(500).json(reason));
+})
+
 module.exports = router;
