@@ -11,12 +11,6 @@ router.get('/timer', function (req, res) {
   res.render('timer', { title: 'Timer' });
 });
 
-router.get('/workout/:id', function (req, res) {
-  repo.findWorkout(req.params.id)
-    .then((value) => res.render('workout', { data: value }))
-    .catch((reason) => res.render('error', { error: reason }));
-});
-
 router.get('/program/:programId/workout/:workoutId', function (req, res) {
   repo.findWorkout(req.params)
     .then((value) => res.render('workout', { data: value }))
