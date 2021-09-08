@@ -52,6 +52,13 @@
         },
         {
             "workoutName": "Week 1, Workout 3",
+            "output": {
+                "desc": "BP AMRAP",
+                "rules": [
+                    { "for":"1RM", "increase":"X > 8 ? 2.5 : 0" },
+                    { "for":"1RM", "increase":"X > 12 ? 2.5 : 0" }
+                ] 
+            },
             "excercises": [
                 {
                     "excerciseName": "BP",

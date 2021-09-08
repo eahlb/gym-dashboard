@@ -7,6 +7,9 @@ const resultSchema = new Schema({
         required: true,
         ref: 'Workout',
     },
+    output: {
+        type: Number
+    },
 });
 
 const setSchema = new Schema({
@@ -28,6 +31,26 @@ const excerciseSchema = new Schema({
     sets: [setSchema],
 });
 
+const ruleSchema = new Schema({
+    for: {
+        type: String,
+        required: true,
+    },
+    increase: {
+        type: String,
+        required: true,
+    },
+    value: Number,
+})
+
+const outputSchema = new Schema({
+    desc: {
+        type: String,
+        required: true,
+    },
+    rules: [ruleSchema],
+});
+
 const workoutSchema = new Schema({
     workoutName: {
         type: String,
@@ -38,6 +61,7 @@ const workoutSchema = new Schema({
         default: 'PENDING',
         enum: ['PENDING', 'COMPLETED'],
     },
+    output: outputSchema,
     excercises: [excerciseSchema],
 });
 
