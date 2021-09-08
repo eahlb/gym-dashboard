@@ -1,5 +1,4 @@
 const schema = require('./schema');
-const Workout = schema.workout;
 const Program = schema.program;
 
 const saveProgram = (program) => {
@@ -43,9 +42,4 @@ module.exports = {
     findWorkout,
     listPrograms,
     listWorkouts,
-    // These will be removed.
-    old_saveWorkout: (workout) => Workout(workout).save(),
-    old_findWorkout: (id) => Workout.findOne({ _id: id }).lean(),
-    old_listWorkouts: (filter = {}) => Program.find().find(filter).lean(),
-    old_updateWorkout: (id, operations) => Workout.updateOne({ _id: id }, { $set: operations }),
 };
