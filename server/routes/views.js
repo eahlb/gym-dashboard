@@ -15,7 +15,7 @@ router.get('/timer', function (req, res) {
 router.get('/program/:programId/workout/:workoutId', function (req, res) {
   repo.findWorkout(req.params)
     .map(compute)
-    .then((value) => res.render('workout', { data: value }))
+    .then((value) => res.render('workout', { data: value, programId: req.params.programId }))
     .catch((reason) => res.render('error', { error: reason }));
 });
 

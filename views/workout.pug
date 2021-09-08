@@ -9,6 +9,7 @@ block content
         li #{s.reps} x #{s.load}
   form(method='POST', action=`/api/result`)
     input(type='hidden', name='workout', value=`${data._id}`)
+    input(type='hidden', name='program', value=`${programId}`)
     if data.output 
       label #{data.output.desc}
       input(type='number', name='output', required='true')
