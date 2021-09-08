@@ -75,6 +75,219 @@
                     ]
                 }
             ]
+        },
+        {
+            "workoutName": "Week 2, Workout 1",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":6, "load":"0.75 * %1RM%"},
+                        {"reps":6, "load":"0.75 * %1RM%"},
+                        {"reps":6, "load":"0.75 * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP1-NAME%",
+                    "sets": [
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 2, Workout 2",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":8, "load":"0.50 * %1RM%"},
+                        {"reps":6, "load":"0.60 * %1RM%"},
+                        {"reps":6, "load":"0.60 * %1RM%"},
+                        {"reps":5, "load":"0.70 * %1RM%"},
+                        {"reps":5, "load":"0.70 * %1RM%"},
+                        {"reps":4, "load":"0.75 * %1RM%"},
+                        {"reps":4, "load":"0.75 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 2, Workout 3",
+            "output": {
+                "desc": "BP AMRAP",
+                "rules": [
+                    { "for":"1RM", "increase":"X > 8 ? 2.5 : 0" },
+                    { "for":"1RM", "increase":"X > 12 ? 2.5 : 0" }
+                ] 
+            },
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":"AMRAP", "load":"0.80 * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP2-NAME%",
+                    "sets": [
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 3, Workout 1",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":3, "load":"0.85 * %1RM%"},
+                        {"reps":3, "load":"0.85 * %1RM%"},
+                        {"reps":3, "load":"0.85 * %1RM%"},
+                        {"reps":3, "load":"0.85 * %1RM%"},
+                        {"reps":8, "load":"0.75 * %1RM%"},
+                        {"reps":8, "load":"0.75 * %1RM%"},
+                        {"reps":8, "load":"0.75 * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP1-NAME%",
+                    "sets": [
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 3, Workout 2",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":8, "load":"0.50 * %1RM%"},
+                        {"reps":6, "load":"0.60 * %1RM%"},
+                        {"reps":6, "load":"0.60 * %1RM%"},
+                        {"reps":5, "load":"0.70 * %1RM%"},
+                        {"reps":5, "load":"0.70 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":1, "load":"0.90 * %1RM%"},
+                        {"reps":1, "load":"0.90 * %1RM%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 3, Workout 3",
+            "output": {
+                "desc": "BP AMRAP",
+                "rules": [
+                    { "for":"1RM", "increase":"X > 8 ? 2.5 : 0" },
+                    { "for":"1RM", "increase":"X > 12 ? 2.5 : 0" }
+                ] 
+            },
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":"AMRAP", "load":"0.80 * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP2-NAME%",
+                    "sets": [
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 4, Workout 1",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":2, "load":"0.80 * %1RM%"},
+                        {"reps":2, "load":"0.80 * %1RM%"},
+                        {"reps":2, "load":"0.80 * %1RM%"},
+                        {"reps":5, "load":"0.75 * %1RM%"},
+                        {"reps":5, "load":"0.75 * %1RM%"},
+                        {"reps":5, "load":"0.75 * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP1-NAME%",
+                    "sets": [
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 4, Workout 2",
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":5, "load":"0.50 * %1RM%"},
+                        {"reps":3, "load":"0.60 * %1RM%"},
+                        {"reps":3, "load":"0.70 * %1RM%"},
+                        {"reps":3, "load":"0.75 * %1RM%"},
+                        {"reps":3, "load":"0.75 * %1RM%"},
+                        {"reps":2, "load":"0.80 * %1RM%"},
+                        {"reps":2, "load":"0.80 * %1RM%"}
+                    ]
+                }
+            ]
+        },
+        {
+            "workoutName": "Week 4, Workout 3",
+            "output": {
+                "desc": "BP AMRAP",
+                "rules": [
+                    { "for":"1RM", "increase":"X > 4 ? 2.5 : 0" },
+                    { "for":"1RM", "increase":"X > 7 ? 2.5 : 0" }
+                ] 
+            },
+            "excercises": [
+                {
+                    "excerciseName": "BP",
+                    "sets": [
+                        {"reps":"AMRAP", "load":"0.85 * %1RM%"}
+                    ]
+                },
+                {
+                    "excerciseName": "%COMP2-NAME%",
+                    "sets": [
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"}
+                    ]
+                }
+            ]
         }
     ]
 }
