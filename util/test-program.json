@@ -1,13 +1,13 @@
 {
     "programName": "BP",
     "input": [
-        { "name": "1RM", "value": "80 kg" },
+        { "name": "1RM", "value": "82.5" },
         { "name": "COMP1-NAME", "value": "Curls" },
         { "name": "COMP1-REPS", "value": "10-12" },
-        { "name": "COMP1-LOAD", "value": "22.5 kg" },
+        { "name": "COMP1-LOAD", "value": "22.5" },
         { "name": "COMP2-NAME", "value": "Chins" },
-        { "name": "COMP2-REPS", "value": "EX" },
-        { "name": "COMP2-LOAD", "value": "22.5 kg" }
+        { "name": "COMP2-REPS", "value": "3" },
+        { "name": "COMP2-LOAD", "value": "-1" }
     ],
     "workouts": [
         {
@@ -16,11 +16,11 @@
                 {
                     "excerciseName": "BP",
                     "sets": [
-                        {"reps":5, "load":"75% * %1RM%"},
-                        {"reps":5, "load":"75% * %1RM%"},
-                        {"reps":5, "load":"75% * %1RM%"},
-                        {"reps":5, "load":"75% * %1RM%"},
-                        {"reps":5, "load":"75% * %1RM%"}
+                        {"reps":5, "load":"0.75 * %1RM%"},
+                        {"reps":5, "load":"0.75 * %1RM%"},
+                        {"reps":5, "load":"0.75 * %1RM%"},
+                        {"reps":5, "load":"0.75 * %1RM%"},
+                        {"reps":5, "load":"0.75 * %1RM%"}
                     ]
                 },
                 {
@@ -40,12 +40,12 @@
                 {
                     "excerciseName": "BP",
                     "sets": [
-                        {"reps":8, "load":"50% * %1RM%"},
-                        {"reps":6, "load":"60% * %1RM%"},
-                        {"reps":4, "load":"70% * %1RM%"},
-                        {"reps":4, "load":"70% * %1RM%"},
-                        {"reps":3, "load":"80% * %1RM%"},
-                        {"reps":3, "load":"80% * %1RM%"}
+                        {"reps":8, "load":"0.50 * %1RM%"},
+                        {"reps":6, "load":"0.60 * %1RM%"},
+                        {"reps":4, "load":"0.70 * %1RM%"},
+                        {"reps":4, "load":"0.70 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"},
+                        {"reps":3, "load":"0.80 * %1RM%"}
                     ]
                 }
             ]
@@ -56,7 +56,7 @@
                 {
                     "excerciseName": "BP",
                     "sets": [
-                        {"reps":"AMRAP", "load":"80% * %1RM%"}
+                        {"reps":"AMRAP", "load":"0.80 * %1RM%"}
                     ]
                 },
                 {

@@ -1,9 +1,6 @@
 const replace = (str, input) => {
     let result = str;
-    input.forEach(i => {
-        console.log(result)
-        result = result.replace(`%${i.name}%`, i.value);
-    });
+    input.forEach(i => result = result.replace(`%${i.name}%`, i.value));
     return result;
 };
 
@@ -16,12 +13,14 @@ const compute = (workout) => {
             sets: [],
         };
         ex.sets.forEach(set => {
-            // TODO: Compute load.  
+            // TODO: Replace eval and formatting with some computing model.
+            const rawLoad = replace(set.load, input)
+            const load = eval(rawLoad);
             result.sets.push({
                 reps: replace(set.reps, input),
-                load: replace(set.load, input),
-            })
-        })
+                load: Math.floor(load / 2.5) * 2.5 + ' kg',
+            });
+        });
         excercises.push(result);
     });
     workout.excercises = excercises;
