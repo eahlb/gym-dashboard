@@ -6,6 +6,5 @@ block content
     li
       a(href='timer') Timer
     each po in programs
-      each wo in po.workouts
-        li
-          a(href=`/program/${po._id}/workout/${wo._id}`) View #{po.programName}: #{wo.workoutName} (#{wo.status})
+      li
+        a(href=`/program/${po._id}/workout/${po.workout._id}`) View #{po.programName}: #{po.workout.workoutName}
