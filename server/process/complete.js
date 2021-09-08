@@ -2,10 +2,16 @@ const repo = require('../database/repository');
 
 const evalRule = function (output) {
     return (parameters, rules) => {
-        // TODO: update parameters based on rules and output
-        console.log(output)
-        console.log(parameters)
-        console.log(rules)
+        parameters
+            .forEach(p => rules
+                .filter(r => r.for == p.name)
+                .forEach(r => {
+                    // TODO: Build away eval
+                    const rule = r.increase.replace('X', output);
+                    const res = eval(rule);
+                    p.value = Number(p.value) + Number(res);
+                })
+            );
     }
 }
 
