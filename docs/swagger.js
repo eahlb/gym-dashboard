@@ -28,7 +28,7 @@ const doc = {
         },
         program: {
             $programName: 'Test program',
-            $input: [{ $name: '1RM', $value: '100 kg' }],
+            $parameters: [{ $name: '1RM', $value: '100 kg' }],
             $workouts: [{
                 $workoutName: 'Week 1, Workout 1',
                 $excercises: [{

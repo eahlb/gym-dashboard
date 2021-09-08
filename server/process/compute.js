@@ -1,23 +1,23 @@
-const replace = (str, input) => {
+const replace = (str, parameters) => {
     let result = str;
-    input.forEach(i => result = result.replace(`%${i.name}%`, i.value));
+    parameters.forEach(p => result = result.replace(`%${p.name}%`, p.value));
     return result;
 };
 
 const compute = (workout) => {
     const excercises = [];
-    const input = workout.input;
+    const parameters = workout.parameters;
     workout.excercises.forEach((ex) => {
         const result = {
-            excerciseName: replace(ex.excerciseName, input),
+            excerciseName: replace(ex.excerciseName, parameters),
             sets: [],
         };
         ex.sets.forEach(set => {
             // TODO: Replace eval and formatting with some computing model.
-            const rawLoad = replace(set.load, input)
+            const rawLoad = replace(set.load, parameters)
             const load = eval(rawLoad);
             result.sets.push({
-                reps: replace(set.reps, input),
+                reps: replace(set.reps, parameters),
                 load: Math.floor(load / 2.5) * 2.5 + ' kg',
             });
         });

@@ -27,8 +27,8 @@ const findWorkout = (params) => {
             const data = program.workouts
                 .filter((workout) => workout._id == params.workoutId)
                 .pop()
-            // Add input parameters to data.
-            data.input = program.input;
+            // Add parameters to data.
+            data.parameters = program.parameters;
             return data;
         });
 }

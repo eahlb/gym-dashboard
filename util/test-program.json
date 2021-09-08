@@ -1,6 +1,6 @@
 {
     "programName": "BP",
-    "input": [
+    "parameters": [
         { "name": "1RM", "value": "82.5" },
         { "name": "COMP1-NAME", "value": "Curls" },
         { "name": "COMP1-REPS", "value": "10-12" },

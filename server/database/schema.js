@@ -65,7 +65,7 @@ const workoutSchema = new Schema({
     excercises: [excerciseSchema],
 });
 
-const inputSchema = new Schema({
+const parameterSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -81,7 +81,7 @@ const programSchema = new Schema({
         type: String,
         required: true,
     },
-    input: [inputSchema],
+    parameters: [parameterSchema],
     workouts: [workoutSchema],
 });
 
