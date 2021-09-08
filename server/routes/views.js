@@ -19,11 +19,4 @@ router.get('/program/:programId/workout/:workoutId', function (req, res) {
     .catch((reason) => res.render('error', { error: reason }));
 });
 
-// POST instead of PUT due to html specification restrictions.
-router.post('/update-workout/:id', function (req, res) {
-  repo.updateWorkout(req.params.id, req.body)
-    .then(() => res.redirect('/'))
-    .catch((reason) => res.render('error', { error: reason }));
-})
-
 module.exports = router;
