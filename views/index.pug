@@ -8,4 +8,4 @@ block content
     each po in programs
       each wo in po.workouts
         li
-          a(href=`/program/${po._id}/workout/${wo._id}`) View #{po.programName}: #{wo.workoutName}
+          a(href=`/program/${po._id}/workout/${wo._id}`) View #{po.programName}: #{wo.workoutName} (#{wo.status})
