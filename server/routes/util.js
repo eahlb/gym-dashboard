@@ -11,12 +11,14 @@ const GET = (func, id, res, transform = x => x) => {
         .catch((reason) => res.status(500).json(reason));
 };
 
-const POST = (func, data, res) => {
+const POST = (func, data, res, callback = x => { }) => {
     func(data)
-        .then((value) =>
+        .then(value => {
             res.status(201)
                 .location(value._id)
-                .json(value))
+                .json(value);
+            callback(value);
+        })
         .catch((reason) => res.status(500).json(reason));
 }
 

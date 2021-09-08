@@ -46,6 +46,16 @@ const listResults = (params) => {
     return Result.find(params);
 }
 
+const updateWorkout = (workoutId, operations) => {
+    return Program.findOne({ 'workouts._id': workoutId })
+        .then(program => {
+            program.workouts
+                .filter(w => String(w._id) == workoutId)
+                .forEach(operations);
+            program.save();
+        })
+}
+
 module.exports = {
     saveProgram,
     saveResult,
@@ -54,4 +64,5 @@ module.exports = {
     listPrograms,
     listWorkouts,
     listResults,
+    updateWorkout,
 };

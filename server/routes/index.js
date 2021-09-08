@@ -2,6 +2,7 @@ const express = require('express');
 const util = require('./util')
 const repo = require('../database/repository');
 const compute = require('../process/compute');
+const complete = require('../process/complete');
 
 const init = function (app) {
   // Create routers.
@@ -24,7 +25,7 @@ const init = function (app) {
   // Create result router.
   resultRouter.route('/')
     .get((req, res) => util.GET_ALL(repo.listResults, req.params, res))
-    .post((req, res) => util.POST(repo.saveResult, req.body, res));
+    .post((req, res) => util.POST(repo.saveResult, req.body, res, complete));
   // Set base route.
   app.use('/api/program', programRouter);
   app.use('/api/result', resultRouter);
