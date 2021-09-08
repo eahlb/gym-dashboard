@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const resultSchema = new Schema({
+    workout: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Workout',
+    },
+});
+
 const setSchema = new Schema({
     reps: {
         type: String,
@@ -61,4 +69,5 @@ workoutSchema.pre('updateOne', (next) => {
 module.exports = {
     workout: mongoose.model('Workout', workoutSchema),
     program: mongoose.model('Program', programSchema),
+    result: mongoose.model('Result', resultSchema),
 };

@@ -1,10 +1,16 @@
 const schema = require('./schema');
 const Program = schema.program;
+const Result = schema.result;
 
 const saveProgram = (program) => {
     const p = new Program(program);
     return p.save();
 }
+
+const saveResult = (result) => {
+    const r = new Result(result);
+    return r.save();
+};
 
 const findProgram = (params) => {
     return Program.findById(params.programId);
@@ -36,10 +42,16 @@ const listWorkouts = (params) => {
         .map((program) => program.workouts);
 }
 
+const listResults = (params) => {
+    return Result.find(params);
+}
+
 module.exports = {
     saveProgram,
+    saveResult,
     findProgram,
     findWorkout,
     listPrograms,
     listWorkouts,
+    listResults,
 };
