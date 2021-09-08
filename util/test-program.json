@@ -1,7 +1,7 @@
 {
     "programName": "BP",
     "input": [
-        { "name": "BP-1RM", "value": "80 kg" },
+        { "name": "1RM", "value": "80 kg" },
         { "name": "COMP1-NAME", "value": "Curls" },
         { "name": "COMP1-REPS", "value": "10-12" },
         { "name": "COMP1-LOAD", "value": "22.5 kg" },
@@ -26,10 +26,10 @@
                 {
                     "excerciseName": "%COMP1-NAME%",
                     "sets": [
-                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"},
-                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"},
-                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"},
-                        {"reps":"COMP1-REPS", "load": "%COMP1-NAME%"}
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"},
+                        {"reps":"%COMP1-REPS%", "load": "%COMP1-LOAD%"}
                     ]
                 }
             ]
@@ -62,9 +62,9 @@
                 {
                     "excerciseName": "%COMP2-NAME%",
                     "sets": [
-                        {"reps":"COMP2-REPS", "load": "%COMP2-NAME%"},
-                        {"reps":"COMP2-REPS", "load": "%COMP2-NAME%"},
-                        {"reps":"COMP2-REPS", "load": "%COMP2-NAME%"}
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"},
+                        {"reps":"%COMP2-REPS%", "load": "%COMP2-LOAD%"}
                     ]
                 }
             ]
