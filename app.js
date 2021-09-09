@@ -13,13 +13,7 @@ const config = require('./config/node-config.json');
 const db = require('./server/database');
 db.open(config.database);
 
-// Documentation
-const swaggerUi = require('swagger-ui-express')
-const swaggerFile = require('./server/swagger-output.json')
-
 const app = express();
-
-app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

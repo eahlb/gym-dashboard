@@ -24,11 +24,6 @@ module.exports = function () {
         const routes = require('./routes');
         routes.init(app);
 
-        // Create documentation UI.
-        const swaggerUi = require('swagger-ui-express')
-        const swaggerFile = require('./swagger-output.json')
-        app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
-
         // Create server.
         server = http.createServer(app);
     }
