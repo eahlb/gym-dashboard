@@ -9,7 +9,7 @@ const viewRouter = require('./server/routes/views');
 const apiRouter = require('./server/routes/index')
 
 // DB
-const config = require('./config/config.json');
+const config = require('./config/node-config.json');
 const db = require('./server/database');
 db.open(config.database);
 
