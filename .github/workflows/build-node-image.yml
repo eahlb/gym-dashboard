@@ -26,4 +26,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
-        run: docker buildx build -f node.dockerfile --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag eahlberg12/gym-dashboard:latest .
+        run: docker buildx build -f node.dockerfile --push --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --tag eahlberg12/gym-node-backend:latest .
