@@ -1,5 +1,5 @@
 const server = require('./server')();
-const config = require('./config/config.json');
+const config = require('./config/node-config.json');
 
 server.create(config);
 server.start();
