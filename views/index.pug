@@ -3,8 +3,6 @@ extends layout
 block content
   h1.center Welcome
   ol
-    li
-      a(href='timer') Timer
     each po in programs
       li
         a(href=`/program/${po._id}/workout/${po.workout._id}`) View #{po.programName}: #{po.workout.workoutName}
