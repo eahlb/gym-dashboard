@@ -4,43 +4,13 @@
   border-color: chartreuse;
   background-color: black;
   margin: 1vmin;
+  font-size: calc(16px + 1vw);
 }
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
 
-body {
-  height: 95vh;
-  width: 95vw;
-  margin: 2vh 0 0 2vw;
-}
-
-div {
-  display: flex;
-}
-
-button {
-  border-radius: 10%;
-  margin: 1vmax;
-}
-
-.grow {
-  flex-grow: 1;
-}
-
-.center {
-  text-align: center;
-  flex-grow: 1;
-}
-
-.large-text {
-  font-size: 50vmin;
-  margin: 1vmin;
-}
-
-.medium-text {
-  font-size: 15vmin;
-  margin: 1vmin;
-}
-
-.small-text {
-  font-size: 5vmin;
-  margin: 1vmin;
-}
+div { display: flex; }
+.col { flex-direction: column; }
+.row { flex-direction: row; }
+.grow { flex-grow: 1; }
+.center { text-align: center; }

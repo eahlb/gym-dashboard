@@ -1,12 +1,14 @@
 extends layout 
 
 block content
-  h1.medium-text= data.workoutName
-  each e in data.excercises
-    h2.small-text= e.excerciseName
-    ol
-      each s in e.sets 
-        li #{s.reps} x #{s.load}
+  h1= data.workoutName
+  div.row
+    each e in data.excercises
+      div.col.grow
+        h2= e.excerciseName
+        ol
+          each s in e.sets 
+            li #{s.reps} x #{s.load}
   if pending
     form(method='POST', action=`/api/result`)
       input(type='hidden', name='workout', value=`${data._id}`)
@@ -14,4 +16,4 @@ block content
       if data.output 
         label #{data.output.desc}
         input(type='number', name='output', required='true')
-      button(type='submit').center Complete workout
+      button(type='submit') Complete workout
