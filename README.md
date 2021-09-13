@@ -15,6 +15,6 @@ For development
 can be used to run `nodemon` with the current directory and `local_config` as a mounted volume. 
 
 ## API
-There is also a api-only version that skips the view engine, run with (nodemon)
+There is also a api-only version that skips the view engine, run with
 
 `docker run --rm -it -p 8080:3000 -v ${PWD}:/var/www -v ${PWD}/config_local:/var/www/config eahlberg12/gym-node-backend api-only`
